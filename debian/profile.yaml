@@ -1,12 +1,12 @@
-name: muslim
-hostname: muslim
+name: mt
+hostname: mt
 distro: debian
 codename: testing
-publisher: Muslim Linux <https://muslimos.github.io/>
-label: Muslim_Linux
-application_id: Muslim Linux
+publisher: MT Linux <https://github.com/03tekno>
+label: MT_Linux
+application_id: MT Linux
 airootfs_directory_pre: airootfs
-linux_args: locales=tr_TR.UTF-8,en_US.UTF-8 keyboard-layouts=tr username=muslim hostname=muslimos user-fullname=muslim noswap quiet
+linux_args: locales=tr_TR.UTF-8,en_US.UTF-8 keyboard-layouts=tr username=mt hostname=mt user-fullname=mt noswap quiet
 #iso_merge: iso_merge
 grub_cfg: grub.cfg
 packages:
