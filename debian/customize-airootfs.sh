@@ -12,6 +12,8 @@ rm -rf /usr/share/backgrounds/gnome
 export OSTREE_BOOTID="$(echo $RANDOM | md5sum -)"
 set -ex
 
+apt install -t experimental linux-image-amd64
+
 ### Instally 17g and other stuff
 yes | apt install wget
 
