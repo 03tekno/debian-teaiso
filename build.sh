@@ -7,4 +7,4 @@ git clone https://gitlab.com/tearch-linux/applications-and-tools/teaiso
 cd teaiso
 make && make install
 cd ../
-mkteaiso --profile=./devuan --output=/output/ --debug 2>&1
+mkteaiso --profile=./debian --output=/output/ --debug 2>&1
