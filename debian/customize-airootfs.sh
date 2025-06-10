@@ -4,28 +4,24 @@ cd /tmp
 ### Cleaning up excess
 rm -rf /usr/share/backgrounds/gnome
 
-### Install packages
-apt install wget
+# ostree cannot detect boot id
+export OSTREE_BOOTID="$(echo $RANDOM | md5sum -)"
+set -ex
 
-### 17g installer
-wget https://github.com/muslimos/17g-installer/releases/download/current/17g-installer_1.0_all.deb
+### Instally 17g and other stuff
+yes | apt install wget
 
-### AppImage launcher
-wget https://github.com/mobilturka/mt-repo/raw/main/deb/appimagelauncher_2.2.0.deb
+wget https://github.com/03tekno/debhane/raw/main/17g-installer_1.0_all.deb
+wget https://github.com/03tekno/debhane/raw/main/pardus-package-installer_0.6.2_all.deb
+yes | apt install ./*.deb -yq --allow-downgrades
 
-### pardus lightdm greeter
-wget https://github.com/muslimos/pardus-lightdm-greeter/releases/download/current/pardus-lightdm-greeter_0.0.1_all.deb
 
-## QMPlay2 Video and Sound Player
-wget https://github.com/mobilturka/mt-repo/raw/main/deb/qmplay2_22.10.23-1~par21_amd64.deb
-
-## Webapp Manager
-wget https://github.com/mobilturka/mt-repo/raw/main/deb/webapp-manager_1.2.8_all.deb
-
-## Koodo reader
-wget https://github.com/mobilturka/mt-repo/raw/main/deb/foliate_2.6.4_all.deb
-
-### muslim backgrounds
-wget https://github.com/muslimos/muslim-backgrounds/releases/download/current/muslim-backgrounds_1.0_all.deb
-
-apt install ./*.deb -yq --allow-downgrades
+install -d -m 0755 /etc/apt/keyrings
+wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+echo '
+Package: *
+Pin: origin packages.mozilla.org
+Pin-Priority: 1000
+' | tee /etc/apt/preferences.d/mozilla
+apt update && apt install firefox firefox-l10n-tr -y
