@@ -1,5 +1,5 @@
-name: mt
-hostname: mt
+name: debian
+hostname: debian
 distro: debian
 codename: testing
 variant: minbase
