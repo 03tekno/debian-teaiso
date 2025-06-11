@@ -7,7 +7,7 @@ publisher: MT Linux <https://github.com/03tekno>
 label: MT_Linux
 application_id: MT Linux
 airootfs_directory_pre: airootfs
-linux_args: locales=tr_TR.UTF-8,en_US.UTF-8 keyboard-layouts=tr username=mt hostname=mt user-fullname=mt noswap quiet
+linux_args: locales=tr_TR.UTF-8,en_US.UTF-8 keyboard-layouts=tr username=debian hostname=debian user-fullname=debian noswap quiet
 #iso_merge: iso_merge
 grub_cfg: grub.cfg
 packages:
