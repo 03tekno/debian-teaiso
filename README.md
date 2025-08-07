@@ -1,4 +1,4 @@
-## Debian Testing Live ISO (Unofficial) - Teaiso 
+## Debian Testing Live ISO (Unofficial) - Teaiso
 ISO Features:
 
 Cinnamon Desktop Edition
