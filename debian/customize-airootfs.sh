@@ -31,4 +31,4 @@ Pin: origin packages.mozilla.org
 Pin-Priority: 1000
 ' | tee /etc/apt/preferences.d/mozilla
 apt update
-#apt install firefox firefox-l10n-tr -y
+apt install firefox firefox-l10n-tr -y
